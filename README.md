@@ -44,7 +44,7 @@ $.log.settings.level = "ERROR";
 To start using the logger, you can do so like this:
 
 ```javascript
-$.log("my debug message");
+$.log("my message");
 ```
 
 In this case the logger will use the default log level of ERROR. You are encouraged to configure the logger level, even though it is not required.
@@ -67,13 +67,13 @@ $.log.error("my error message");
 
 ## Compatibility
 
-Firefox: Requires Firebug's console
-Chrome: Supported in ALL versions
+Firefox: Requires Firebug's console  
+Chrome: Supported in ALL versions  
 IE: Not supported
 
 
 ## License
 
-Copyright (c) 2011 Cesar Arevalo <cesar@consultek.us>
-This library is licensed under the MIT license:
+Copyright (c) 2011 Cesar Arevalo <cesar@consultek.us>  
+This library is licensed under the MIT license:  
 http://opensource.org/licenses/mit-license.php
