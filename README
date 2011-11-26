@@ -1,15 +1,9 @@
-Summary
--------
-jQuery Plugin: Log - version 0.1
+# jQuery Plugin: Log - version 0.1
 
-
-Description
------------
 jQuery plugin for browser log messaging. It has the capability of attaching hierarchichal levels to log messages. And it can be enabled or disabled at runtime, thus preventing unnecessary logging or the ability to "debug" code after deployment.
 
 
-Configuration
--------------
+## Configuration
 
 The logger has four levels, in hierarchical order they are:
 
@@ -45,8 +39,7 @@ $.log.settings.level = "ERROR";
 ```
 
 
-Usage
------
+## Usage
 
 To start using the logger, you can do so like this:
 
@@ -72,16 +65,14 @@ $.log.error("my error message");
 ```
 
 
-Compatibility
--------------
+## Compatibility
 
 Firefox: Requires Firebug's console
 Chrome: Supported in ALL versions
 IE: Not supported
 
 
-License
--------
+## License
 
 Copyright (c) 2011 Cesar Arevalo <cesar@consultek.us>
 This library is licensed under the MIT license:
