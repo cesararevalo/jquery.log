@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="./jquery.log.min.js"></script>
+</head>
+<body>
+<h4>Test page for the Log jQuery Plugin</h4>
+<h5>Logger settings:</h5>
+<ul>
+  <li>enabled:
+    <select id='enabled'>
+      <option value='true'>true</option>
+      <option value='false'>false</option>
+    </select>
+  </li>
+  <li>level:
+    <select id='level'>
+      <option value='DEBUG'>DEBUG</option>
+      <option value='INFO'>INFO</option>
+      <option value='WARNING'>WARNING</option>
+      <option value='ERROR'>ERROR</option>
+    </select>
+  </li>
+</ul>
+<h5>Message, change and it will be logged to the console:</h5>
+<textarea id='console-message' cols='40'></textarea>
+<h5>Message log level:</h5>
+<select id='console-level'>
+  <option value='DEBUG' selected>DEBUG</option>
+  <option value='INFO'>INFO</option>
+  <option value='WARNING'>WARNING</option>
+  <option value='ERROR'>ERROR</option>
+</select>
+<script>
+$(document).ready(function(){
+  $('#enabled').val(String($.log.settings.enabled));
+  $('#level').val($.log.settings.level);
+  $('#console-message').change(function(){
+    $.log(this.value, $('#console-level').val());
+  });
+  $('#console-level').change(function(){
+    $.log($('#console-message').val(), this.value);
+  });
+  $('#enabled').change(function() {
+    // convert the string from the select to a boolean value, update the settings
+    $.log.settings.enabled = this.value === 'true';
+    $.log($('#console-message').val(), $('#console-level').val());
+  });
+  $('#level').change(function() {
+    // update settings
+    $.log.settings.level = this.value;
+    $.log($('#console-message').val(), $('#console-level').val());
+  });
+});
+</script>
+</body>
+</html>
